@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Gestión de Piezas</title>
+</head>
+<body>
+    <h1>Gestión de Piezas de Computadoras</h1>
+    <form action="/add" method="POST">
+        <input type="text" name="nombre" placeholder="Nombre" required>
+        <textarea name="descripcion" placeholder="Descripción" required></textarea>
+        <input type="number" name="precio" placeholder="Precio" required>
+        <input type="number" name="cantidad" placeholder="Cantidad" required>
+        <button type="submit">Agregar</button>
+    </form>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Acciones</th>
+        </tr>
+        {% for pieza in piezas %}
+        <tr>
+            <td>{{ pieza[0] }}</td>
+            <td>{{ pieza[1] }}</td>
+            <td>{{ pieza[2] }}</td>
+            <td>{{ pieza[3] }}</td>
+            <td>{{ pieza[4] }}</td>
+            <td>
+                <form action="/update/{{ pieza[0] }}" method="POST">
+                    <input type="text" name="nombre" value="{{ pieza[1] }}">
+                    <textarea name="descripcion">{{ pieza[2] }}</textarea>
+                    <input type="number" name="precio" value="{{ pieza[3] }}">
+                    <input type="number" name="cantidad" value="{{ pieza[4] }}">
+                    <button type="submit">Actualizar</button>
+                </form>
+                <a href="/delete/{{ pieza[0] }}">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

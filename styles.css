@@ -1,0 +1,132 @@
+/* General */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+h1 {
+    text-align: center;
+    color: #007BFF;
+    margin: 20px 0;
+    font-size: 2.5em;
+}
+
+/* Formulario */
+form {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+form button {
+    background-color: #007BFF;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Tabla */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table thead {
+    background-color: #007BFF;
+    color: #ffffff;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #dee2e6;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+table th {
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+table td {
+    font-size: 0.9em;
+}
+
+/* Botones de acciones */
+table a, table button {
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    margin-right: 5px;
+}
+
+table a {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+}
+
+table a:hover {
+    background-color: #218838;
+}
+
+table a.delete {
+    background-color: #dc3545;
+}
+
+table a.delete:hover {
+    background-color: #c82333;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    form, table {
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    form button, table a, table button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
